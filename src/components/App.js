@@ -180,6 +180,9 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setIsInfoTooltipOpen(true);
       });
   }
 
@@ -192,7 +195,7 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
-        <Header email={email} logoutProfile={logoutProfile}/>
+        <Header email={email} logoutProfile={logoutProfile} />
         <Switch>
           <ProtectedRoute
             exact
